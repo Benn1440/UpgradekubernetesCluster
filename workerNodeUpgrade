@@ -1,0 +1,29 @@
+1. # Get the Running Nodes and it's version
+~ kubectl get Nodes
+
+2. # Drain the worker Node
+~ kubectl drain < node-to-drain> --ignore-daemonsets --force
+
+3. # Upgrade the kubeadm (Run command on the specific Worker Node)
+~ sudo apt-get update 
+~ sudo apt-get install -y --allow-change-held-packages kubeadm=<required-version-of-upgrade>
+
+4. # Verify the latest version works
+~ kubeadm version
+
+5. # Verify the upgrade plan
+~ sudo kubeadm upgrade node 
+
+6. # Upgrade kubelet & kubectl packages
+~ sudo apt-get update
+~ sudo apt-get install -y --allow-change-held-packages kubelet=<version-of-upgrade> kubectl=<version-of-upgrade>
+
+8. # Restart the kubelet
+~ sudo systemctl daemon-reload
+~ sudo systemctl restart kubelet
+
+9. # Get the Running Node & version (Run command on Master Node)
+~ kubectl get Nodes
+
+10. # Uncordon the Node (Run command on Master Node)
+~ kubectl Uncordon <name-of-node-to-Uncordon>
