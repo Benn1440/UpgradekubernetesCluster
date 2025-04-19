@@ -1,0 +1,14 @@
+1. # Get the Running Nodes and it's version
+~ kubectl get Nodes
+
+2. # Drain the Master Node
+~ kubectl drain < node-to-drain> --ignore-daemonsets
+
+3. # Upgrade the kubeadm
+~ sudo apt-get update
+~ sudo apt-get install -y --allow-change-held-packages kubeadm=<required-version-of-upgrade>
+
+4. Verify the latest version works
+~ kubeadm version
+
+5. 
