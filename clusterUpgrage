@@ -11,4 +11,22 @@
 4. Verify the latest version works
 ~ kubeadm version
 
-5. 
+5. Verify the upgrade plan
+~ sudo kubeadm upgrade plan <version-of-upgrade>
+
+6. Apply the Upgrade
+~ sudo kubeadm upgrade apply <version-of-upgrade>
+
+7. Upgrade kubelet & kubectl packages
+~ sudo apt-get update
+~ sudo apt-get install -y --allow-change-held-packages kubelet=<version-of-upgrade> kubectl=<version-of-upgrade>
+
+8. Restart the kubelet
+~ sudo systemctl daemon-reload
+~ sudo systemctl restart kubelet
+
+9. Get the Running Node & version
+~ kubectl get Nodes
+
+10. Uncordon the Node
+~ kubectl Uncordon <name-of-node-to-Uncordon>
