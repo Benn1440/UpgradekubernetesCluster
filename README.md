@@ -14,13 +14,19 @@
 
 
  # Steps to Upgrading Kubernetes Cluster Worker Node
+
 N:B: In upgrading worker nodes, ensure this is done in a rolling-upgrade manner, meaning one worker node at a time, to avoid downtime in production.
 
 And the commands must be executed from the master Node
  ****
- 2. Drain Worker Node
+ 2. Drain Worker Node <br><br>
+![IMG_6530-images-0](https://github.com/user-attachments/assets/d3eb4572-1844-41b6-b530-bc2a4c9c3463)
+
  3. Upgrade kubeadm
  4. Upgrade kubelet config
- 5. Upgrade kubectl and kubelete
- 6. Uncordon the Node
+ 5. Upgrade kubectl and kubelet
+ 6. Uncordon the Node <br><br>
+![IMG_6530-images-4](https://github.com/user-attachments/assets/b89b54e7-b04e-47af-81a2-8c73937b0b0b)
+
+
 
